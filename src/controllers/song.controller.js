@@ -10,7 +10,7 @@ const getAll = catchError(async(req, res) => {
             {
                 model: Album,
                 attributes: {
-                    exclude: ['createAt', 'updateAt']
+                    exclude: ['createdAt', 'updatedAt']
                 }
             },
             {
@@ -72,7 +72,7 @@ const setArtists = catchError(async(req, res) => {
     const song = await Song.findByPk(id)
     if(!song) return res.sendStatus(400)
     await song.setArtists(req.body)
-    const artist = await Song.getArtists()
+    const artist = await song.getArtists()
     return res.json(artist)
 });
 

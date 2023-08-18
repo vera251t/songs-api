@@ -3,14 +3,15 @@ const Artist = require("./Artist");
 const Genre = require("./Genre");
 const Song = require("./Song");
 
+//Tabla Pivot: "GenreArtist"
 Genre.belongsToMany(Artist, { through: "GenresArtists" })
 Artist.belongsToMany(Genre, { through: "GenresArtists" })
 
 //artista tiene muchos albunes
-Artist.hasMany(Album) //artistId ->
+Artist.hasMany(Album) //artistId
 Album.belongsTo(Artist)
 
-Album.hasMany(Song) //albumId -> Song
+Album.hasMany(Song) //albumId
 Song.belongsTo(Album)
 
 //relacion entre muchos a muchos

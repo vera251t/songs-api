@@ -9,6 +9,7 @@ const Song = sequelize.define('song', {
     youtubeUrl: {
         type: DataTypes.TEXT
     }
+    //albumId
 });
 
 module.exports = Song;
